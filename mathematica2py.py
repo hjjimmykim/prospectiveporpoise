@@ -1,4 +1,4 @@
-def mathematica2py(input = 'V.txt'):
+def mathematica2py(input = 'V.txt', ID_me=1, ID_otherguy=2):
     f = open(input)
 
     text = f.read()
@@ -6,17 +6,17 @@ def mathematica2py(input = 'V.txt'):
     text = ''.join(text.split()) # Remove whitespace
     text = text.replace('^','**') # Replace ^ with **
     
-    text = text.replace('a0','p1[0]')
-    text = text.replace('a1','p1[1]')
-    text = text.replace('a2','p1[2]')
-    text = text.replace('a3','p1[3]')
-    text = text.replace('a4','p1[4]')
+    text = text.replace('a0','p' + str(ID_me) + '[0]')
+    text = text.replace('a1','p' + str(ID_me) + '[1]')
+    text = text.replace('a2','p' + str(ID_me) + '[2]')
+    text = text.replace('a3','p' + str(ID_me) + '[3]')
+    text = text.replace('a4','p' + str(ID_me) + '[4]')
     
-    text = text.replace('b0','p2[0]')
-    text = text.replace('b1','p2[1]')
-    text = text.replace('b2','p2[2]')
-    text = text.replace('b3','p2[3]')
-    text = text.replace('b4','p2[4]')
+    text = text.replace('b0','p' + str(ID_otherguy) + '[0]')
+    text = text.replace('b1','p' + str(ID_otherguy) + '[1]')
+    text = text.replace('b2','p' + str(ID_otherguy) + '[2]')
+    text = text.replace('b3','p' + str(ID_otherguy) + '[3]')
+    text = text.replace('b4','p' + str(ID_otherguy) + '[4]')
 
     num_terms = text.count('{')
 
