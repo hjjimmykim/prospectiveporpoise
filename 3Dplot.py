@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Mar  3 12:27:25 2019
-
-@author: work
-"""
 
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -88,23 +81,3 @@ ax.set_ylabel('$p_2$',fontsize=20)
 ax.set_zlabel('$p_3$',fontsize=20)
 
 plt.show()
-
-color=iter(cm.jet(np.linspace(0,1,len(p_save))))
-
-norm = mpl.colors.Normalize(vmin=0,vmax=1)
-sm = plt.cm.ScalarMappable(cmap=cm.jet, norm=norm)
-sm.set_array([])
-
-for i in range(len(p_save)):
-  c=next(color)
-  ax.plot(p_save[i][0], p_save[i][1], p_save[i][2],c=c)
-  ax.scatter(p_save[i][0][0], p_save[i][1][0], p_save[i][2][0],c='k',s=100) #Initial
-  ax.scatter(p_save[i][0][-1], p_save[i][1][-1], p_save[i][2][-1],c=c, s=50) #End
-
-cbar = plt.colorbar(sm, ticks=np.linspace(0.1,1.0,10), 
-             boundaries=np.arange(0.0,1.1,.1))
-cbar.set_label('Beta2', rotation=270)
-
-ax.set_xlabel('$p_1$',fontsize=20)
-ax.set_ylabel('$p_2$',fontsize=20)
-ax.set_zlabel('$p_3$',fontsize=20)
