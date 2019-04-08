@@ -68,4 +68,6 @@ ax.set_xlim3d([0,1])
 ax.set_ylim3d([0,1])
 ax.set_zlim3d([0,1])
 
-plt.show()
+filename = 'beta2=' + str(b2) + '_beta3=' + str(b3) + '_p_init=' + str(p_init) + '.png'
+plt.savefig('princeton_plots/' + filename)
+#plt.show()
