@@ -122,7 +122,7 @@ if __name__=='__main__':
     data = {'b_list':b_list, 't_list_list':t_list_list, 'p_list_list':p_list_list, 'r_list_list':r_list_list}
     
     filename = 'StagHunt' + str(num_agents) + 'P' + '_huntreward_' +str(hunt_reward) \ 
-             + '_alpha_' + str(alpha[0]) + '_beta_0.6_1.3_0.1' + '_n_batch_' + str(n_batch) + \
+             + '_alpha_' + str(alpha[0]) + '_beta_0.6_1.3_0.1' + '_n_batch_' + str(n_batch) \
             + '_n_steps_' + str(n_steps) + '.pickle'
     
     with open(filename, 'wb') as f:
